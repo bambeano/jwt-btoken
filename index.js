@@ -1,0 +1,1 @@
+module.exports = process.env.JWT-BTOKEN_COV ? require('./lib-cov/jwt-btoken') : require('./lib/jwt-btoken');
