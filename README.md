@@ -1,10 +1,7 @@
-jwt-btoken
-=======
+# jwt-btoken
 
-Description
-
-Implements a very basic JWT Bearer token for use with oAuth. This
-version relies on [green-jwt] as as such only implements
+A very basic [JWT](http://tools.ietf.org/html/draft-jones-json-web-token-10) Bearer token for use with __oAuth__. This version relies on [green-jwt](https://github.com/berngp/node-green-jwt) 
+and as such only implements [JWS](http://tools.ietf.org/html/draft-ietf-jose-json-web-signature-02).
 
 ## Install
 
@@ -38,6 +35,10 @@ var claims = jwtBtoken.claimsManager.extractClaims(token);
 util.log('Claims:\r\n===========================\r\n' + util.inspect(claims));
 util.log('test ended...');
 ```
+
+## Contributing
+
+Patches are welcome, fork away! :-)
 
 ## License 
 
