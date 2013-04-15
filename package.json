@@ -1,25 +1,22 @@
 {
   "name": "jwt-btoken",
   "version": "0.0.1",
-  "description": "",
+  "description": "JWT Bearer token",
   "main": "index.js",
-  "scripts": {
-    "test": "make test"
+  "scripts": { 
   },
   "dependencies": {
-
-  },
-  "devDependencies": {
-    "should": "*",
-    "jscover": "*",
-    "mocha": "*"
+    "green-jwt": "0.0.5-alpha"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/bambeano/jwt-btoken.git"
   },
   "keywords": [
-    "jwt-btoken"
+    "jwt-btoken",
+    "oauth",
+    "jwt",
+    "bearer"
   ],
   "author": "Dean Kern <dean@thekerns.com>",
   "license": "MIT"

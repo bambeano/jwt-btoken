@@ -1,11 +1,10 @@
-jwt-btoken [![Build Status](https://secure.travis-ci.org/fengmk2/jwt-btoken.png)](http://travis-ci.org/fengmk2/jwt-btoken)
+jwt-btoken
 =======
-
-![logo](https://raw.github.com/fengmk2/jwt-btoken/master/logo.png)
 
 Description
 
-jscoverage: [100%](http://fengmk2.github.com/coverage/jwt-btoken.html)
+Implements a very basic JWT Bearer token for use with oAuth. This
+version relies on [green-jwt] as as such only implements
 
 ## Install
 
@@ -16,30 +15,35 @@ $ npm install jwt-btoken
 ## Usage
 
 ```js
-var jwt-btoken = require('jwt-btoken');
+var path = require('path')
+  , fs = require('fs')
+  , util = require('util')
+  , rootPath = process.cwd();
 
-```
+var options = {
+	expiryInSeconds: 60 * 60,
+  	skewInSeconds: 60 * 3,
+ 	algorithm: 'RS512',
+  	issuer: 'localhost',
+  	cert: fs.readFileSync(path.join(rootPath, 'test/cert.pem')),
+	key: fs.readFileSync(path.join(rootPath, 'test/key.pem'))
+};
 
-## Git
-```bash
-touch README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin git@github.com:bambeano/jwt-btoken.git
-git push -u origin master
+var jwtBtoken = require('../index')(options);
 
-Push an existing repository from the command line
+var token = jwtBtoken.claimsManager.createToken({ userId: 'my_username' });
+util.log('Token: ' + token);
 
-git remote add origin git@github.com:bambeano/jwt-btoken.git
-git push -u origin master
+var claims = jwtBtoken.claimsManager.extractClaims(token);
+util.log('Claims:\r\n===========================\r\n' + util.inspect(claims));
+util.log('test ended...');
 ```
 
 ## License 
 
 (The MIT License)
 
-Copyright (c) 2012 fengmk2 &lt;fengmk2@gmail.com&gt;
+Copyright (c) 2012 Dean Kern &lt;dean@thekerns.org&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -59,3 +63,5 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
