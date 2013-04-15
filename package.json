@@ -1,10 +1,8 @@
 {
   "name": "jwt-btoken",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "JWT Bearer token",
   "main": "index.js",
-  "scripts": { 
-  },
   "dependencies": {
     "green-jwt": "0.0.5-alpha"
   },
@@ -18,6 +16,6 @@
     "jwt",
     "bearer"
   ],
-  "author": "Dean Kern <dean@thekerns.com>",
+  "author": "Dean Kern <dean@thekerns.org>",
   "license": "MIT"
 }
