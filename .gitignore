@@ -1,4 +1,8 @@
+
 tmp/*
 pkg/*
-Gemfile.lock
+pids
+logs
+results
+
 
