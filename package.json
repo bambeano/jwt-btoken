@@ -4,7 +4,7 @@
   "description": "JWT Bearer token",
   "main": "index.js",
   "dependencies": {
-    "green-jwt": "0.0.5-alpha"
+    "green-jwt": "git://github.com/EverettQuebral/node-green-jwt.git"
   },
   "repository": {
     "type": "git",
